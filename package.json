@@ -33,8 +33,11 @@
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.1.6",
-    "tsoa": "^3.11.2"
+    "tsoa": "^3.11.2",
+    "typeorm": "^0.2.38"
   },
   "nodemonConfig": {
     "watch": [

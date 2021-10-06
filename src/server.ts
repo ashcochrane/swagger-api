@@ -3,8 +3,12 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import router from "./routes";
 import swaggerUi from "swagger-ui-express";
+import { createConnection } from "typeorm";
+
+import dbConfig from "./config/database";
+import router from "./routes";
+
 
 dotenv.config();
 
@@ -34,6 +38,13 @@ app.use(
     })
 );
 
-app.listen(PORT, () => {
-    console.log("Server is running on port", PORT);
-});
+createConnection(dbConfig)
+  .then((_connection) => {
+    app.listen(PORT, () => {
+      console.log("Server is running on port", PORT);
+    });
+  })
+  .catch((err) => {
+    console.log("Unable to connect to db", err);
+    process.exit(1);
+  });
