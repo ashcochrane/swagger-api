@@ -1,5 +1,6 @@
 import express from "express";
 import PingController from "../controllers/ping";
+import UserRouter from "./user.router"
 
 const router = express.Router();
 
@@ -12,5 +13,7 @@ router.get('/ping', async(req,res) => {
         res.status(500).send("Error");
     }
 })
+
+router.use("/users",UserRouter);
 
 export default router;
