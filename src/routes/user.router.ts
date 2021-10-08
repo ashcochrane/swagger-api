@@ -1,5 +1,4 @@
 import express from "express";
-import { resourceLimits } from "worker_threads";
 import UserController from "../controllers/user.controller";
 
 const router = express.Router();

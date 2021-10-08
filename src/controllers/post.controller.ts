@@ -22,8 +22,8 @@ export default class PostController {
         return getPost(Number(id));
     }
 
-    @PostMethod('/')
-    public async createPost(@Body() body: IPostPayload):Promise<Post> {
+    @PostMethod("/")
+    public async createPost(@Body() body: IPostPayload): Promise<Post> {
         return createPost(body);
     }
 

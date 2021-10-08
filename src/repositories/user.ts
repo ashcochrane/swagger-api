@@ -27,4 +27,3 @@ export const createUser = async (payload: IUserPayload): Promise<User> => {
         ...payload,
     });
 } 
-
